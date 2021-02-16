@@ -12,15 +12,22 @@ func TestHello(t *testing.T) {
 	}
 
 	t.Run("Say hello to people", func(t *testing.T) {
-		result := Hello("Ana")
+		result := Hello("Ana", "spanish")
 		expected := "Hello Ana"
 
 		assetMessage(t, result, expected)
 	})
 
 	t.Run("Say 'Hello world' when an empty string is passed", func(t *testing.T) {
-		result := Hello("")
+		result := Hello("", "spanish")
 		expected := "Hello World"
+
+		assetMessage(t, result, expected)
+	})
+
+	t.Run("Say hello in spanish", func(t *testing.T) {
+		result := Hello("Diego", "spanish")
+		expected := "Hola, Diego"
 
 		assetMessage(t, result, expected)
 	})
