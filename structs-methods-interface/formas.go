@@ -7,6 +7,15 @@ type Forma interface {
 	Area() float64
 }
 
+type Triangulo struct {
+	Base float64
+	Altura float64
+}
+
+func (t Triangulo) Area() float64 {
+	return (t.Base * t.Altura) * 0.5
+}
+
 type Retangulo struct {
 	Largura float64
 	Altura  float64
